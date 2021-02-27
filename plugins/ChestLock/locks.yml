@@ -1,0 +1,9 @@
+chest:
+  world,179,70,-26:
+    owner: a2512edc-574f-4fbf-a880-4d2647a5c5c1
+    private: true
+    allowedPlayers: '[]'
+  world,180,70,-26:
+    owner: a2512edc-574f-4fbf-a880-4d2647a5c5c1
+    private: true
+    allowedPlayers: []

@@ -1,0 +1,120 @@
+# Use this document to configure the settings of your AntiXray Plugin.
+# If you think that this document misses any option please contact me on discord. https://discord.io/AnimalPlugins        
+#   _____     _   _ __ __             
+#  |  _  |___| |_|_|  |  |___ ___ _ _ 
+#  |     |   |  _| |-   -|  _| .'| | |
+#  |__|__|_|_|_| |_|__|__|_| |__,|_  |
+#                                |___|
+#
+# Placeholders:
+# Use '&' to use the color code.
+# %player% -> Player's username.
+# %amount% -> The amount of block(s) of that type that the player has broken.
+# %pourcentage% -> The pourcentage of blocks of that type that the player has broken (over all the others).
+# %total% -> The total of block(s) of every type that the player has broken.
+# >> -> Changes automaticly to the good looking double arrow.
+#
+# For any support, please visit the discord mentionned before!
+
+# The time that the blocks mined stay counted. (In minutes)
+# Ex.: In this exemple, every block mined will be removed (one by one) from the counter after 20 minutes.
+reset-time: 20
+
+# Should the plugin send alerts if a player is suspected to be hacking?
+alerts: true
+
+# The time between every "hacking alert" (A player will trigger the alert only by breaking a block)
+# This only prevents the plugin to send "ex.:" 8 alerts if the player finds 8 diamonds. The time is in second.
+xray-alert-interval: 10
+
+# The message that will be sent when a player is suspected to be hacking (see "hacking-suspection" to set this option up).
+xray-alert: '&5&lAnti&8&lXray &7&l>> &d%player% is suspected to be hacking!'
+
+# The name that the main menu (gui) will have.
+menu-title: '&8AntiXray &8&l>> &8Main Menu'
+
+# The size of the menu (gui). Can be either 9, 18, 27, 36, 45 or 54.
+menu-size: 36
+
+# The name of the Player(s) statistics item(s).
+player-statistics-item-name: '&5&l%player%'
+
+# The message displayed when the AntiXray plugin has no information to display.
+no-information-message: '&c&l[!] &cThere was no AntiXray information to be found.'
+
+# The message displayed when a player tries to execute an AntiXray without enough permission.
+no-permission-message: '&c&l[!] &cYou do not have enough permission to do this.'
+
+# The message displayed when the plugin gets reloaded.
+reload-message: '&5&lAnti&8&lXray &7&l>> &dPlugin Reloaded.'
+
+# The message displayed when the data of the players have been reset.
+reset-message: '&5&lAnti&8&lXray &7&l>> &dThe data of the player(s) have been reset.'
+
+# The message displayed when a player sends an AntiXray related command that is unknown to the plugin.
+unknown-command: '&c&l[!] &cUnknown Command.'
+
+# The lore of the Player(s) data item (in the gui).
+# This lore will be followed by the data.
+data-lore: 
+  - '&7((Click to teleport!))'
+  - ''
+  - '&b&lBlock(s) Mined&b: &f%total%'
+  - ''
+  - '&d&lInformations&d:'
+
+# The block that will be detected by the AntiXray plugin (and counted). You can add up to 15 blocks to this list.
+# Please use the materials from this list for the "counted-materials": https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html
+# 'exemple':
+#   counted-material: The block that will be counted by the antixray plugin.
+#   name: The name that this "block" will have in the /antixray menu.
+#   alert: The amount of blocks of this type that players will have to break to trigger an alert. (remove this section if you want to disable the alerts for this block.)
+#   show-in-gui: Should this block be shown in the menu.
+detected-blocks:
+  'stone':
+    counted-material: STONE
+    name: '&7&lStone &8&l>> &f%amount%'
+    show-in-gui: true
+  'netherrack':
+    counted-material: NETHERRACK
+    name: '&4&lNetherrack &8&l>> &f%amount%'
+    show-in-gui: true
+  'coal':
+    counted-material: COAL_ORE
+    name: '&8&lCoal &8&l>> &f%amount%'
+    show-in-gui: true
+  'iron':
+    counted-material: IRON_ORE
+    name: '&f&lIron &8&l>> &f%amount%'
+    show-in-gui: true
+  'gold':
+    counted-material: GOLD_ORE
+    name: '&e&lGold &8&l>> &f%amount%'
+    show-in-gui: true
+  'redstone':
+    counted-material: REDSTONE_ORE
+    name: '&c&lRedstone &8&l>> &f%amount%'
+    show-in-gui: true
+  'lapis':
+    counted-material: LAPIS_ORE
+    name: '&9&lLapis &8&l>> &f%amount%'
+    show-in-gui: true
+  'quartz':
+    counted-material: NETHER_QUARTZ_ORE
+    name: '&f&lQuartz &8&l>> &f%amount%'
+    show-in-gui: true
+  'diamond':
+    counted-material: DIAMOND_ORE
+    name: '&b&lDiamond &8&l>> &f%amount% &7(%pourcentage%%)'
+    alert: 30
+    show-in-gui: true
+  'emerald':
+    counted-material: EMERALD_ORE
+    name: '&a&lEmerald &8&l>> &f%amount% &7(%pourcentage%%)'
+    alert: 7
+    show-in-gui: true
+  'debris':
+    counted-material: ANCIENT_DEBRIS
+    name: '&8&lNetherrite &8&l>> &f%amount% &7(%pourcentage%%)'
+    alert: 13
+    show-in-gui: true
